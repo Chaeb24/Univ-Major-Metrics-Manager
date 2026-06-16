@@ -3,7 +3,7 @@
 ### 미니 프로젝트
 
 > **Java와 Oracle DB(JDBC)를 활용하여 대학, 학과 정보, 그리고 연도별 세부 지표(경쟁률·취업률)를 관리 & 분석할 수 있는프로그램**
-> **기본 CRUD만 정의한 상태
+> **기본 CRUD만 정의한 상태**
 
 ---
 
@@ -25,10 +25,7 @@
 ## 📐 3. 데이터베이스 설계 (ERD)
 데이터 간의 유기적인 종속 관계를 반영하여 **대학(부모) ➔ 학과(자식) ➔ 지표(손자)** 형태로 테이블을 구조화했습니다.
 
-* **University (대학):** 대학명, 주소, 연락처, 홈페이지 URL, 입학처 URL
-* **UniversityMajor (학과):** 학과명, 지역, 주/야간 구분 (`universityIdFK` 외래키 참조)
-* **UniversityMajor_Metrics (지표):** 공시연도, 경쟁률, 재학생수, 입학정원, 취업률 (`universityMajorFK` 외래키 참조)
-* **데이터 무결성 방침:** 대학 데이터 삭제 시 `ON DELETE CASCADE` 제약 조건을 활용하여 하위 학과 및 지표 데이터까지 종속적으로 일괄 자동 삭제되도록 처리했습니다.
+<img width="1632" height="718" alt="Image" src="https://github.com/user-attachments/assets/c5a4d0eb-ebab-4245-8f7d-ed3c78bc37d6" />
 
 ---
 
