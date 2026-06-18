@@ -92,7 +92,7 @@ public class UniversityMajorDAO {
 	    conn = DBUtil.dbConnect();
 	    try {
 	        ps = conn.prepareStatement(sql);
-	        ps.setString(1, univName); 
+	        ps.setString(1, "%"+univName.trim()+"%"); 
 	        rs = ps.executeQuery();
 	        
 	        while(rs.next()) {
