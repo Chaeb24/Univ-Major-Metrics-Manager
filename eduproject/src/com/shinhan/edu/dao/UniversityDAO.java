@@ -97,14 +97,15 @@ public class UniversityDAO {
 	}
 	
 	
-	//이름으로 조회
 	public UniversityDTO selectByName(String name) {
 		UniversityDTO university = null;
-		String sql = "select * from university where name = ?";
+		String sql = "select * from university where name like ?";
+		
+	
 		conn = DBUtil.dbConnect();
 		try {
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, name);
+			ps.setString(1,"%"+ name.trim() +"%");
 			rs = ps.executeQuery();
 			if(rs.next()) {
 			    university = makeUniversity(rs);
